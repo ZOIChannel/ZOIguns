@@ -24,6 +24,9 @@ public class ZOIguns {
     @Instance("ZOIguns")
     public static FlameCore instance;
     public static Logger logger = LogManager.getLogger("ZOIguns");
+
+    public static Item AK47;
+
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         Configuration cfg = new Configuration(event.getSuggestedConfigurationFile());
