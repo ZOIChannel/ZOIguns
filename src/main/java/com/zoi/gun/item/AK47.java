@@ -6,7 +6,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class AK47 extends ItemBow {
-    public AK47Clone() {
+    public AK47() {
         // スタックサイズ上限。スタック出来ないようにするので1にする。
         this.setMaxStackSize(1);
         // 耐久値がないとエンチャントできないと判明したので、気持ちだけ付けた

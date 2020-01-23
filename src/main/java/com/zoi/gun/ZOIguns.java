@@ -2,7 +2,9 @@ package com.zoi.gun;
 
 import java.io.IOException;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
@@ -15,13 +17,19 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import defeatedcrow.flamethrower.common.CommonProxyF;
+import com.zoi.gun.common.CommonProxyF;
+import com.zoi.gun.item.AK47;
+
+
+
+
+
 
 /*
  * @Modアノテーションです。
  * MODのID、表示名、起動に必要な他MODなどを記述するところ。
  */
-@Mod(modid = "ZOIguns", name = "ZOIguns", version = "1.7.10_0.0.1", dependencies = "required*after:Forge@[10.13.4.1558,)")
+@Mod(modid = "ZOIguns", name = "ZOIguns", version = "1.0.0", dependencies = "required*after:Forge@[10.13.4.1558,)")
 
 public class ZOIguns {
 
@@ -32,7 +40,7 @@ public class ZOIguns {
     // インスタンスの生成
     // @InstanceのStringにはMODのIDを入れます。
     @Instance("ZOIguns")
-    public static FlameCore instance;
+    public static ZOIguns instance;
 
     /* Loggerクラス
      * 必須ではありませんが、エラー箇所の調査時など、一時的にコンソールログを出したいときに使用しています。
@@ -69,8 +77,8 @@ public class ZOIguns {
 
         // アイテムやブロックの登録はこのあたりで行う予定。
         // itemの登録。
-        this.AK47 = new ItemIgnis().setCreativeTab(CreativeTabs.tabCombat).setUnlocalizedName("dcsflame.flamethrower");
-        GameRegistry.registerItem(flamethrower, "ZOIguns.AK47");
+        this.AK47 = new AK47().setCreativeTab(CreativeTabs.tabCombat).setUnlocalizedName("dcsflame.flamethrower");
+        GameRegistry.registerItem(AK47, "ZOIguns.AK47");
     }
 
     @EventHandler
